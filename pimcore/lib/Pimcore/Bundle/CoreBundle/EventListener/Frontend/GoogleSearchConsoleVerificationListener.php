@@ -12,7 +12,7 @@
  * @license    http://www.pimcore.org/license     GPLv3 and PEL
  */
 
-namespace Pimcore\Bundle\PimcoreBundle\EventListener\Frontend;
+namespace Pimcore\Bundle\CoreBundle\EventListener\Frontend;
 
 use Pimcore\Service\Request\PimcoreContextResolver;
 use Symfony\Component\HttpFoundation\Response;

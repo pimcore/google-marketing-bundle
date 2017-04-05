@@ -12,7 +12,7 @@
  * @license    http://www.pimcore.org/license     GPLv3 and PEL
  */
 
-namespace Pimcore\Bundle\PimcoreAdminBundle\Controller\Reports;
+namespace Pimcore\Bundle\AdminBundle\Controller\Reports;
 
 use Pimcore\Controller\EventedControllerInterface;
 use Pimcore\Google;
