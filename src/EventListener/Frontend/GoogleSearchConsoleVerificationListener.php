@@ -51,8 +51,8 @@ class GoogleSearchConsoleVerificationListener implements EventSubscriberInterfac
 
         $conf = Config::getReportConfig();
 
-        if (isset($conf['webmastertools']) && isset($conf['webmastertools']['sites'])) {
-            $sites = $conf['webmastertools']['sites'];
+        if (isset($conf['google_search_console']) && isset($conf['google_search_console']['sites'])) {
+            $sites = $conf['google_search_console']['sites'];
 
             if (is_array($sites)) {
                 foreach ($sites as $site) {
