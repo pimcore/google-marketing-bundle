@@ -20,6 +20,7 @@
   },
   "require-dev": {
     "phpstan/phpstan": "1.10.5",
+    "phpstan/phpstan-symfony": "^1.2.20",
     "phpunit/phpunit": "^9.3",
     "codeception/codeception": "^5.0.3",
     "codeception/module-symfony":"^3.1.0",
