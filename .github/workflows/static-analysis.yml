@@ -35,7 +35,7 @@ jobs:
 
             - name: "Setup Pimcore environment"
               run: |
-                  .github/ci/scripts/setup-environment.sh
+                  .github/ci/scripts/setup-pimcore-environment.sh
             - name: "Update Pimcore version"
               env:
                   PIMCORE_VERSION: "${{ matrix.pimcore_version }}"
