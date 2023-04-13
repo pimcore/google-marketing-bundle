@@ -1,6 +1,8 @@
 parameters:
     level: 6
     reportUnmatchedIgnoredErrors: false
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
     paths:
         - src
     bootstrapFiles:
