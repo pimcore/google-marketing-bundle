@@ -32,7 +32,6 @@ if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
 
 $pimcoreTestsSupportDir = $pimcoreTestDir . '/Support';
 
-
 include $pimcoreTestsSupportDir . '/Util/Autoloader.php';
 
 \Pimcore\Bootstrap::setProjectRoot();
