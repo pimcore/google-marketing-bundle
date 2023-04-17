@@ -32,10 +32,6 @@ if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
 
 $pimcoreTestsSupportDir = $pimcoreTestDir . '/Support';
 
-//Pimcore 10 BC layer
-if (!is_dir($pimcoreTestsSupportDir)) {
-    $pimcoreTestsSupportDir = $pimcoreTestDir . '/_support';
-}
 
 include $pimcoreTestsSupportDir . '/Util/Autoloader.php';
 
@@ -44,10 +40,10 @@ include $pimcoreTestsSupportDir . '/Util/Autoloader.php';
 
 //error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_WARNING);
 
-Autoloader::addNamespace('Pimcore\Tests', $pimcoreTestsSupportDir); //Pimcore 10 BC layer
 Autoloader::addNamespace('Pimcore\Tests\Support', $pimcoreTestsSupportDir);
 Autoloader::addNamespace('Pimcore\Model\DataObject', PIMCORE_CLASS_DIRECTORY . '/DataObject');
 Autoloader::addNamespace('Pimcore\Bundle\GoogleMarketingBundle\Tests', __DIR__);
+Autoloader::addNamespace('Pimcore\Bundle\GoogleMarketingBundle\Tests', __DIR__ . '/_support');
 
 echo __DIR__ . '/_support';
 

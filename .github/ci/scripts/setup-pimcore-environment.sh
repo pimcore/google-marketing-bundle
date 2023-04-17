@@ -2,8 +2,6 @@
 
 set -eu
 
-#cp -rv .github/ci/files/var .
-
 mkdir -p var/config
 mkdir -p bin
 
