@@ -17,8 +17,8 @@ declare(strict_types=1);
 
 namespace Pimcore\Bundle\GoogleMarketingBundle\EventListener;
 
-use Pimcore\Bundle\GoogleMarketingBundle\Config\SiteConfigProvider;
 use Pimcore\Bundle\AdminBundle\Event\IndexActionSettingsEvent;
+use Pimcore\Bundle\GoogleMarketingBundle\Config\SiteConfigProvider;
 
 class IndexSettingsListener
 {
