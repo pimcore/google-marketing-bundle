@@ -1,3 +1,6 @@
+settings:
+    memory_limit: 1024M
+    colors: true
 namespace: Pimcore\Bundle\GoogleMarketingBundle\Tests
 support_namespace: Support
 bootstrap: _bootstrap.php
