@@ -25,7 +25,6 @@ jobs:
         strategy:
             matrix:
                 include:
-                    - { php-version: 8.1, database: "mariadb:10.7", server_version: "10.7.7-MariaDB-1:10.7.7+maria~ubu2004", dependencies: lowest, experimental: false }
                     - { php-version: 8.2, database: "mariadb:10.7", server_version: "10.7.7-MariaDB-1:10.7.7+maria~ubu2004", dependencies: highest, experimental: false }
                     - { php-version: 8.2, database: "mariadb:10.7", server_version: "10.7.7-MariaDB-1:10.7.7+maria~ubu2004", dependencies: highest, pimcore_version: "11.x-dev as 11.0.0", experimental: true }
         services:
@@ -74,10 +73,6 @@ jobs:
                 run: |
                   mysql -e "SELECT VERSION();"
                   php -i
-
-            -   name: "Sync Metadata Storage"
-                run: |
-                  bin/console doctrine:migrations:sync-metadata-storage -vvv
 
             -   name: "Run Codeception"
                 run: "vendor/bin/codecept run -c . -vvv --xml"
