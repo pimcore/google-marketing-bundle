@@ -17,8 +17,8 @@ declare(strict_types=1);
 
 namespace Pimcore\Bundle\GoogleMarketingBundle\SiteId;
 
-use Pimcore\Bundle\AdminBundle\System\Config;
 use Pimcore\Model\Site;
+use Pimcore\SystemSettingsConfig;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
@@ -68,7 +68,7 @@ class SiteId
         $name = null;
 
         if (null === $site) {
-            if (!empty($mainDomain = Config::get()['general']['domain'])) {
+            if (!empty($mainDomain = SystemSettingsConfig::get()['general']['domain'])) {
                 return $mainDomain;
             }
 
