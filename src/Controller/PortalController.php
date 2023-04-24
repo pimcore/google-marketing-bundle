@@ -18,6 +18,8 @@ namespace Pimcore\Bundle\GoogleMarketingBundle\Controller;
 
 use Pimcore\Bundle\AdminBundle\Controller\AdminController;
 use Pimcore\Bundle\GoogleMarketingBundle\Config\SiteConfigProvider;
+use Pimcore\Controller\Traits\JsonHelperTrait;
+use Pimcore\Controller\UserAwareController;
 use Pimcore\Model\Site;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,8 +30,9 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  *
  * @internal
  */
-class PortalController extends AdminController
+class PortalController extends UserAwareController
 {
+    use JsonHelperTrait;
     /**
      * @Route("/portlet-analytics-sites", name="pimcore_bundle_googlemarketing_portal_portletanalyticssites", methods={"GET"})
      *
@@ -59,6 +62,6 @@ class PortalController extends AdminController
             }
         }
 
-        return $this->adminJson(['data' => $data]);
+        return $this->jsonResponse(['data' => $data]);
     }
 }
