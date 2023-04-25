@@ -59,7 +59,7 @@ class PimcoreGoogleMarketingExtension extends ConfigurableExtension implements P
         $serviceLocator->setArguments([$mapping]);
     }
 
-    public function prepend(ContainerBuilder $container)
+    public function prepend(ContainerBuilder $container): void
     {
         if ($container->hasExtension('pimcore_admin')) {
             $loader = new YamlFileLoader(
