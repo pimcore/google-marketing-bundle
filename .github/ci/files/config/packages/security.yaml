@@ -3,7 +3,7 @@ security:
 
     providers:
         pimcore_admin:
-            id: Pimcore\Bundle\AdminBundle\Security\User\UserProvider
+            id: Pimcore\Security\User\UserProvider
 
     firewalls:
         dev:
@@ -15,9 +15,6 @@ security:
             pattern: ^/asset/webdav
             provider: pimcore_admin
             http_basic: ~
-
-        # Pimcore Admin Bundle firewall
-        pimcore_admin: '%pimcore_admin_bundle.firewall_settings%'
 
     access_control:
         # Pimcore admin ACl  // DO NOT CHANGE!
