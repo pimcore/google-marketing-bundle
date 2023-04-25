@@ -16,13 +16,13 @@ declare(strict_types=1);
 
 namespace  Pimcore\Bundle\GoogleMarketingBundle\Controller;
 
-use Pimcore\Bundle\AdminBundle\Controller\AdminController;
 use Pimcore\Config;
+use Pimcore\Controller\UserAwareController;
 
 /**
  * @internal
  */
-abstract class ReportsControllerBase extends AdminController
+abstract class ReportsControllerBase extends UserAwareController
 {
     public function getConfig(): array
     {

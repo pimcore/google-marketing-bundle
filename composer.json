@@ -15,7 +15,6 @@
   "require": {
     "php": "~8.1.0 || ~8.2.0",
     "pimcore/pimcore": "^11.0",
-    "pimcore/admin-ui-classic-bundle": "^1.0",
     "google/apiclient": "^2.12"
   },
   "require-dev": {
@@ -26,6 +25,9 @@
     "codeception/module-symfony":"^3.1.1",
     "codeception/phpunit-wrapper": "^9",
     "codeception/module-asserts": "^2"
+  },
+  "conflict": {
+    "pimcore/pimcore": "v11.0.0-ALPHA1 || v11.0.0-ALPHA2 || v11.0.0-ALPHA3 || v11.0.0-ALPHA4 || v11.0.0-ALPHA5 || v11.0.0-ALPHA6 || v11.0.0-ALPHA7 || v11.0.0-ALPHA8 || v11.0.0-BETA1"
   },
   "autoload": {
     "psr-4": {

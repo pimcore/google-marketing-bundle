@@ -1,2 +1,11 @@
 parameters:
 	ignoreErrors:
+		-
+			message: "#^Call to method addSetting\\(\\) on an unknown class Pimcore\\\\Bundle\\\\AdminBundle\\\\Event\\\\IndexActionSettingsEvent\\.$#"
+			count: 1
+			path: src/EventListener/IndexSettingsListener.php
+
+		-
+			message: "#^Parameter \\$settingsEvent of method Pimcore\\\\Bundle\\\\GoogleMarketingBundle\\\\EventListener\\\\IndexSettingsListener\\:\\:indexSettings\\(\\) has invalid type Pimcore\\\\Bundle\\\\AdminBundle\\\\Event\\\\IndexActionSettingsEvent\\.$#"
+			count: 1
+			path: src/EventListener/IndexSettingsListener.php

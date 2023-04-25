@@ -66,3 +66,15 @@ node_modules/
 /plugins/
 /tools/
 /website/
+
+# Test env
+/bin
+/cache
+/kernel
+/tests/_output
+/tests/Support/_generated
+/.env
+/.env.test
+/.htaccess
+/auth.json
+/config.json

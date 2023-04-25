@@ -18,6 +18,7 @@ namespace  Pimcore\Bundle\GoogleMarketingBundle\Controller;
 
 use Exception;
 use Pimcore\Config\ReportConfigWriter;
+use Pimcore\Controller\Traits\JsonHelperTrait;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -29,6 +30,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class SettingsController extends ReportsControllerBase
 {
+    use JsonHelperTrait;
     /**
      * @Route("/get", name="pimcore_bundle_googlemarketing_settings_get", methods={"GET"})
      *
@@ -46,7 +48,7 @@ class SettingsController extends ReportsControllerBase
             'config' => [],
         ];
 
-        return $this->adminJson($response);
+        return $this->jsonResponse($response);
     }
 
     /**
@@ -74,9 +76,9 @@ class SettingsController extends ReportsControllerBase
                 'errors' => [$e->getMessage()],
             ];
 
-            return $this->adminJson($result);
+            return $this->jsonResponse($result);
         }
 
-        return $this->adminJson(['success' => true]);
+        return $this->jsonResponse(['success' => true]);
     }
 }

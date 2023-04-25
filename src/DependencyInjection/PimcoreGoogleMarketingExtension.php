@@ -17,13 +17,15 @@ namespace Pimcore\Bundle\GoogleMarketingBundle\DependencyInjection;
 
 use Pimcore\Bundle\GoogleMarketingBundle\Config\SiteConfigProvider;
 use Pimcore\Bundle\GoogleMarketingBundle\Tracker\Tracker as AnalyticsGoogleTracker;
+use Pimcore\Config\LocationAwareConfigRepository;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
-class PimcoreGoogleMarketingExtension extends ConfigurableExtension
+class PimcoreGoogleMarketingExtension extends ConfigurableExtension implements PrependExtensionInterface
 {
     public function loadInternal(array $config, ContainerBuilder $container): void
     {
@@ -55,5 +57,18 @@ class PimcoreGoogleMarketingExtension extends ConfigurableExtension
 
         $serviceLocator = $container->getDefinition('pimcore.analytics.google.fallback_service_locator');
         $serviceLocator->setArguments([$mapping]);
+    }
+
+    public function prepend(ContainerBuilder $container): void
+    {
+        if ($container->hasExtension('pimcore_admin')) {
+            $loader = new YamlFileLoader(
+                $container,
+                new FileLocator(__DIR__ . '/../../config')
+            );
+
+            $loader->load('admin-classic.yaml');
+        }
+
     }
 }

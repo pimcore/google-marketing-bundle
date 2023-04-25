@@ -22,6 +22,7 @@ use Pimcore\Bundle\GoogleMarketingBundle\Api\Api;
 use Pimcore\Bundle\GoogleMarketingBundle\Config\SiteConfigProvider;
 use Pimcore\Bundle\GoogleMarketingBundle\Controller\ReportsControllerBase;
 use Pimcore\Controller\KernelControllerEventInterface;
+use Pimcore\Controller\Traits\JsonHelperTrait;
 use Pimcore\Model\Document;
 use Pimcore\Model\Site;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -37,6 +38,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AnalyticsController extends ReportsControllerBase implements KernelControllerEventInterface
 {
+    use JsonHelperTrait;
     protected Analytics $service;
 
     /**
@@ -106,9 +108,9 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
                 }
             }
 
-            return $this->adminJson($data);
+            return $this->jsonResponse($data);
         } catch (\Exception $e) {
-            return $this->adminJson(false);
+            return $this->jsonResponse(false);
         }
     }
 
@@ -223,7 +225,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
             $data[] = $tmpData;
         }
 
-        return $this->adminJson(['data' => $data]);
+        return $this->jsonResponse(['data' => $data]);
     }
 
     /**
@@ -301,7 +303,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
 
         ksort($outputData);
 
-        return $this->adminJson(['data' => $outputData]);
+        return $this->jsonResponse(['data' => $outputData]);
     }
 
     /**
@@ -355,7 +357,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
             ];
         }
 
-        return $this->adminJson(['data' => $data]);
+        return $this->jsonResponse(['data' => $data]);
     }
 
     /**
@@ -426,7 +428,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
             ];
         }
 
-        return $this->adminJson(['data' => $data]);
+        return $this->jsonResponse(['data' => $data]);
     }
 
     /**
@@ -438,7 +440,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
      */
     public function getDimensionsAction(Request $request): JsonResponse
     {
-        return $this->adminJson(['data' => Api::getAnalyticsDimensions()]);
+        return $this->jsonResponse(['data' => Api::getAnalyticsDimensions()]);
     }
 
     /**
@@ -450,7 +452,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
      */
     public function getMetricsAction(Request $request): JsonResponse
     {
-        return $this->adminJson(['data' => Api::getAnalyticsMetrics()]);
+        return $this->jsonResponse(['data' => Api::getAnalyticsMetrics()]);
     }
 
     /**
@@ -473,7 +475,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
             ];
         }
 
-        return $this->adminJson(['data' => $data]);
+        return $this->jsonResponse(['data' => $data]);
     }
 
     protected function formatDimension(string $type, string $value): string
