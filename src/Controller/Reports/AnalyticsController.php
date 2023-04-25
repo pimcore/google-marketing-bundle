@@ -39,6 +39,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AnalyticsController extends ReportsControllerBase implements KernelControllerEventInterface
 {
     use JsonHelperTrait;
+
     protected Analytics $service;
 
     /**

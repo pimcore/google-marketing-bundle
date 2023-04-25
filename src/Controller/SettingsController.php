@@ -31,6 +31,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SettingsController extends ReportsControllerBase
 {
     use JsonHelperTrait;
+
     /**
      * @Route("/get", name="pimcore_bundle_googlemarketing_settings_get", methods={"GET"})
      *

@@ -17,7 +17,6 @@ namespace Pimcore\Bundle\GoogleMarketingBundle\DependencyInjection;
 
 use Pimcore\Bundle\GoogleMarketingBundle\Config\SiteConfigProvider;
 use Pimcore\Bundle\GoogleMarketingBundle\Tracker\Tracker as AnalyticsGoogleTracker;
-use Pimcore\Config\LocationAwareConfigRepository;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
