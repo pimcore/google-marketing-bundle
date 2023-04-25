@@ -70,6 +70,5 @@ class PimcoreGoogleMarketingExtension extends ConfigurableExtension implements P
             $loader->load('admin-classic.yaml');
         }
 
-        LocationAwareConfigRepository::loadSymfonyConfigFiles($container, 'pimcore_google_marketing', 'googlemarketing');
     }
 }
