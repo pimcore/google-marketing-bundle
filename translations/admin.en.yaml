@@ -26,3 +26,4 @@ analytics_asynchronous_code: Use the asynchronous code for analytics (ga.js)
 advanced_integration: Advanced Integration
 analytics_accountid: Account-ID (eg. 1234567)
 analytics_internalid: GA Internal ID
+google_marketing: Google Marketing
