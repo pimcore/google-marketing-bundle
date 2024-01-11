@@ -2,7 +2,7 @@
 Menus and buttons may vary depending on the current GUI version
 
 ## Console - APIs
-* <https://console.developers.google.com/project>
+* [https://console.developers.google.com/project](https://console.developers.google.com/project)
 * *Menu:* `[+ Create project]`
   * Project name: **project-sk**
 * *Menu:* `Select project`
@@ -33,7 +33,7 @@ Menus and buttons may vary depending on the current GUI version
     - **Custom Search API** > `[Enable]`
 
 ## Analytics
-* <https://analytics.google.com/>
+* [https://analytics.google.com/](https://analytics.google.com/)
 * *Menu:* `Administrator`
   * `[Create new account]`
     * Account name: **project**
