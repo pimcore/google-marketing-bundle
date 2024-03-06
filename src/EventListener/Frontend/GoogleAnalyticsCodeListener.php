@@ -41,7 +41,7 @@ class GoogleAnalyticsCodeListener
 
     public function onKernelResponse(ResponseEvent $event): void
     {
-        if (!$this->isEnabled()) {
+        if (!$this->isEnabled() || $event->getResponse() instanceof RedirectResponse) {
             return;
         }
 
