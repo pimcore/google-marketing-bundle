@@ -28,6 +28,7 @@ use Pimcore\Bundle\GoogleMarketingBundle\SiteId\SiteIdProvider;
 use Pimcore\Config;
 use Pimcore\Http\Request\Resolver\PimcoreContextResolver;
 use Pimcore\Tool;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\Templating\EngineInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
@@ -69,7 +70,7 @@ class GoogleTagManagerListener
 
     public function onKernelResponse(ResponseEvent $event): void
     {
-        if (!$this->isEnabled()) {
+        if (!$this->isEnabled() || $event->getResponse() instanceof RedirectResponse) {
             return;
         }
 
