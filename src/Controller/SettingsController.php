@@ -14,7 +14,7 @@ declare(strict_types=1);
  *  @license    http://www.pimcore.org/license     GPLv3 and PCL
  */
 
-namespace  Pimcore\Bundle\GoogleMarketingBundle\Controller;
+namespace Pimcore\Bundle\GoogleMarketingBundle\Controller;
 
 use Exception;
 use Pimcore\Config\ReportConfigWriter;
