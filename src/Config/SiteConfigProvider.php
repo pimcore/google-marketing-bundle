@@ -35,7 +35,7 @@ class SiteConfigProvider
         $this->configProvider = $configProvider;
     }
 
-    public function getSiteConfig(Site $site = null): ?array
+    public function getSiteConfig(?Site $site = null): ?array
     {
         $siteId = $this->getSiteId($site);
         $config = $this->configProvider->getConfig();
@@ -43,7 +43,7 @@ class SiteConfigProvider
         return $config->getConfigForSite($siteId->getConfigKey());
     }
 
-    public function isSiteReportingConfigured(Site $site = null): bool
+    public function isSiteReportingConfigured(?Site $site = null): bool
     {
         $siteId = $this->getSiteId($site);
         $config = $this->configProvider->getConfig();
@@ -51,7 +51,7 @@ class SiteConfigProvider
         return $config->isReportingConfigured($siteId->getConfigKey());
     }
 
-    private function getSiteId(Site $site = null): SiteId
+    private function getSiteId(?Site $site = null): SiteId
     {
         $siteId = null;
         if (null === $site) {

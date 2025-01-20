@@ -31,7 +31,7 @@ abstract class AbstractTracker implements TrackerInterface
         $this->siteIdProvider = $siteIdProvider;
     }
 
-    public function generateCode(SiteId $siteId = null): ?string
+    public function generateCode(?SiteId $siteId = null): ?string
     {
         if (null === $siteId) {
             $siteId = $this->siteIdProvider->getForRequest();
@@ -47,7 +47,7 @@ abstract class AbstractTracker implements TrackerInterface
      */
     abstract protected function buildCode(SiteId $siteId): ?string;
 
-    public function addCodePart(string $code, string $block = null, bool $prepend = false, SiteId $siteId = null): void
+    public function addCodePart(string $code, ?string $block = null, bool $prepend = false, ?SiteId $siteId = null): void
     {
         $action = $prepend ? CodeCollector::ACTION_PREPEND : CodeCollector::ACTION_APPEND;
 

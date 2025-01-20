@@ -29,7 +29,7 @@ class ConfigProvider
     /**
      * @param array<string, mixed>|null $configObject
      */
-    public function __construct(array $configObject = null)
+    public function __construct(?array $configObject = null)
     {
         $this->configObject = $configObject;
     }

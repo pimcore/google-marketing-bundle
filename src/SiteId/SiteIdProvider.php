@@ -35,7 +35,7 @@ class SiteIdProvider
      *
      *
      */
-    public function getForRequest(Request $request = null): SiteId
+    public function getForRequest(?Request $request = null): SiteId
     {
         if ($this->siteResolver->isSiteRequest($request)) {
             $site = $this->siteResolver->getSite($request);

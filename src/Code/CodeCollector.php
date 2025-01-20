@@ -60,7 +60,7 @@ class CodeCollector
      *
      * @param SiteId|null $siteId Restrict code part to a specific site
      */
-    public function addCodePart(string $code, string $block = null, string $action = self::ACTION_APPEND, SiteId $siteId = null): void
+    public function addCodePart(string $code, ?string $block = null, string $action = self::ACTION_APPEND, ?SiteId $siteId = null): void
     {
         if (!in_array($action, $this->validActions)) {
             throw new \InvalidArgumentException(sprintf(

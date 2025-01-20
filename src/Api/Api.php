@@ -83,7 +83,7 @@ class Api
      *
      * @return Client|false
      */
-    public static function getServiceClient(array $scope = null): Client|bool
+    public static function getServiceClient(?array $scope = null): Client|bool
     {
         if (!self::isServiceConfigured()) {
             return false;
