@@ -28,7 +28,7 @@ interface TrackerInterface
      *
      * @return null|string Null if no tracking is configured
      */
-    public function generateCode(SiteId $siteId = null): ?string;
+    public function generateCode(?SiteId $siteId = null): ?string;
 
     /**
      * Adds additional code to the tracker. Code can either be added to all trackers
@@ -39,5 +39,5 @@ interface TrackerInterface
      * @param bool $prepend       Whether to prepend the code to the code block
      * @param SiteId|null $siteId Restrict code to a specific site
      */
-    public function addCodePart(string $code, string $block = null, bool $prepend = false, SiteId $siteId = null): void;
+    public function addCodePart(string $code, ?string $block = null, bool $prepend = false, ?SiteId $siteId = null): void;
 }

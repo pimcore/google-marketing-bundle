@@ -86,7 +86,7 @@ class Tracker extends AbstractTracker
         return $this->defaultPath;
     }
 
-    public function setDefaultPath(string $defaultPath = null): void
+    public function setDefaultPath(?string $defaultPath = null): void
     {
         $this->defaultPath = $defaultPath;
     }
@@ -116,7 +116,7 @@ class Tracker extends AbstractTracker
      *
      *
      */
-    public function generateCodeForSiteConfig(array $siteConfig, SiteId $siteId = null): string
+    public function generateCodeForSiteConfig(array $siteConfig, ?SiteId $siteId = null): string
     {
         if (null === $siteId) {
             $siteId = $this->siteIdProvider->getForRequest();
@@ -164,7 +164,7 @@ class Tracker extends AbstractTracker
      *
      * @return array<string, mixed>
      */
-    private function getTrackerConfigurationFromJson(string $configValue = null, array $defaultConfig = []): array
+    private function getTrackerConfigurationFromJson(?string $configValue = null, array $defaultConfig = []): array
     {
         $config = [];
         if (!empty($configValue)) {
