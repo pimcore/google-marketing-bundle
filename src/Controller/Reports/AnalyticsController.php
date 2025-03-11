@@ -30,24 +30,19 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 /**
- * @Route("/reports/analytics")
- *
  * @internal
  */
+#[Route('/reports/analytics')]
 class AnalyticsController extends ReportsControllerBase implements KernelControllerEventInterface
 {
     use JsonHelperTrait;
 
     protected Analytics $service;
 
-    /**
-     * @Route("/deeplink", name="pimcore_bundle_googlemarketing_reports_analytics_deeplink", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/deeplink', name: 'pimcore_bundle_googlemarketing_reports_analytics_deeplink', methods: ['GET'])]
     public function deeplinkAction(Request $request, SiteConfigProvider $siteConfigProvider): RedirectResponse
     {
         $config = $siteConfigProvider->getSiteConfig();
@@ -59,11 +54,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
         return $this->redirect($url);
     }
 
-    /**
-     * @Route("/get-profiles", name="pimcore_bundle_googlemarketing_reports_analytics_getprofiles", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/get-profiles', name: 'pimcore_bundle_googlemarketing_reports_analytics_getprofiles', methods: ['GET'])]
     public function getProfilesAction(Request $request): JsonResponse
     {
         try {
@@ -145,11 +136,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
         return $request->get('path');
     }
 
-    /**
-     * @Route("/chartmetricdata", name="pimcore_bundle_googlemarketing_reports_analytics_chartmetricdata", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/chartmetricdata', name: 'pimcore_bundle_googlemarketing_reports_analytics_chartmetricdata', methods: ['GET'])]
     public function chartmetricdataAction(Request $request, SiteConfigProvider $siteConfigProvider): JsonResponse
     {
         $config = $siteConfigProvider->getSiteConfig($this->getSite($request));
@@ -225,11 +212,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
         return $this->jsonResponse(['data' => $data]);
     }
 
-    /**
-     * @Route("/summary", name="pimcore_bundle_googlemarketing_reports_analytics_summary", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/summary', name: 'pimcore_bundle_googlemarketing_reports_analytics_summary', methods: ['GET'])]
     public function summaryAction(Request $request, SiteConfigProvider $siteConfigProvider): JsonResponse
     {
         $config = $siteConfigProvider->getSiteConfig($this->getSite($request));
@@ -300,11 +283,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
         return $this->jsonResponse(['data' => $outputData]);
     }
 
-    /**
-     * @Route("/source", name="pimcore_bundle_googlemarketing_reports_analytics_source", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/source', name: 'pimcore_bundle_googlemarketing_reports_analytics_source', methods: ['GET'])]
     public function sourceAction(Request $request, SiteConfigProvider $siteConfigProvider): JsonResponse
     {
         $config = $siteConfigProvider->getSiteConfig($this->getSite($request));
@@ -351,11 +330,7 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
         return $this->jsonResponse(['data' => $data]);
     }
 
-    /**
-     * @Route("/data-explorer", name="pimcore_bundle_googlemarketing_reports_analytics_dataexplorer", methods={"GET", "POST"})
-     *
-     *
-     */
+    #[Route('/data-explorer', name: 'pimcore_bundle_googlemarketing_reports_analytics_dataexplorer', methods: ['GET', 'POST'])]
     public function dataExplorerAction(Request $request, SiteConfigProvider $siteConfigProvider): JsonResponse
     {
         $config = $siteConfigProvider->getSiteConfig($this->getSite($request));
@@ -419,31 +394,19 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
         return $this->jsonResponse(['data' => $data]);
     }
 
-    /**
-     * @Route("/get-dimensions", name="pimcore_bundle_googlemarketing_reports_analytics_getdimensions", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/get-dimensions', name: 'pimcore_bundle_googlemarketing_reports_analytics_getdimensions', methods: ['GET'])]
     public function getDimensionsAction(Request $request): JsonResponse
     {
         return $this->jsonResponse(['data' => Api::getAnalyticsDimensions()]);
     }
 
-    /**
-     * @Route("/get-metrics", name="pimcore_bundle_googlemarketing_reports_analytics_getmetrics", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/get-metrics', name: 'pimcore_bundle_googlemarketing_reports_analytics_getmetrics', methods: ['GET'])]
     public function getMetricsAction(Request $request): JsonResponse
     {
         return $this->jsonResponse(['data' => Api::getAnalyticsMetrics()]);
     }
 
-    /**
-     * @Route("/get-segments", name="pimcore_bundle_googlemarketing_reports_analytics_getsegments", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/get-segments', name: 'pimcore_bundle_googlemarketing_reports_analytics_getsegments', methods: ['GET'])]
     public function getSegmentsAction(Request $request): JsonResponse
     {
         $result = $this->service->management_segments->listManagementSegments();
