@@ -21,22 +21,17 @@ use Pimcore\Config\ReportConfigWriter;
 use Pimcore\Controller\Traits\JsonHelperTrait;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 /**
- * @Route("/settings")
- *
  * @internal
  */
+#[Route('/settings')]
 class SettingsController extends ReportsControllerBase
 {
     use JsonHelperTrait;
 
-    /**
-     * @Route("/get", name="pimcore_bundle_googlemarketing_settings_get", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/get', name: 'pimcore_bundle_googlemarketing_settings_get', methods: ['GET'])]
     public function getAction(Request $request): JsonResponse
     {
         $this->checkPermission('google_marketing');
@@ -50,11 +45,7 @@ class SettingsController extends ReportsControllerBase
         return $this->jsonResponse($response);
     }
 
-    /**
-     * @Route("/save", name="pimcore_bundle_googlemarketing_settings_save", methods={"PUT"})
-     *
-     *
-     */
+    #[Route('/save', name: 'pimcore_bundle_googlemarketing_settings_save', methods: ['PUT'])]
     public function saveAction(Request $request, ReportConfigWriter $configWriter): JsonResponse
     {
         $this->checkPermission('google_marketing');
