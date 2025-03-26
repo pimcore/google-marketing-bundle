@@ -136,7 +136,11 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
         return $request->get('path');
     }
 
-    #[Route('/chartmetricdata', name: 'pimcore_bundle_googlemarketing_reports_analytics_chartmetricdata', methods: ['GET'])]
+    #[Route(
+        '/chartmetricdata',
+        name: 'pimcore_bundle_googlemarketing_reports_analytics_chartmetricdata',
+        methods: ['GET']
+    )]
     public function chartmetricdataAction(Request $request, SiteConfigProvider $siteConfigProvider): JsonResponse
     {
         $config = $siteConfigProvider->getSiteConfig($this->getSite($request));
@@ -330,7 +334,11 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
         return $this->jsonResponse(['data' => $data]);
     }
 
-    #[Route('/data-explorer', name: 'pimcore_bundle_googlemarketing_reports_analytics_dataexplorer', methods: ['GET', 'POST'])]
+    #[Route(
+        '/data-explorer',
+        name: 'pimcore_bundle_googlemarketing_reports_analytics_dataexplorer',
+        methods: ['GET', 'POST']
+    )]
     public function dataExplorerAction(Request $request, SiteConfigProvider $siteConfigProvider): JsonResponse
     {
         $config = $siteConfigProvider->getSiteConfig($this->getSite($request));
@@ -394,7 +402,11 @@ class AnalyticsController extends ReportsControllerBase implements KernelControl
         return $this->jsonResponse(['data' => $data]);
     }
 
-    #[Route('/get-dimensions', name: 'pimcore_bundle_googlemarketing_reports_analytics_getdimensions', methods: ['GET'])]
+    #[Route(
+        '/get-dimensions',
+        name: 'pimcore_bundle_googlemarketing_reports_analytics_getdimensions',
+        methods: ['GET']
+    )]
     public function getDimensionsAction(Request $request): JsonResponse
     {
         return $this->jsonResponse(['data' => Api::getAnalyticsDimensions()]);
