@@ -1,6 +1,6 @@
 {
   "name": "pimcore/google-marketing-bundle",
-  "license": "GPL-3.0+",
+  "license": "Pimcore Open Core License (POCL)",
   "type": "pimcore-bundle",
   "description": "Pimcore Google Marketing Bundle provides additional tools for integrating google marketing tools.",
   "config": {
