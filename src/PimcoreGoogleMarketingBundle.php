@@ -25,10 +25,22 @@ use Pimcore\HttpKernel\Bundle\DependentBundleInterface;
 use Pimcore\HttpKernel\BundleCollection\BundleCollection;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 
+/**
+ * @deprecated version 2.1
+ */
 class PimcoreGoogleMarketingBundle extends AbstractPimcoreBundle implements DependentBundleInterface, PimcoreBundleAdminClassicInterface
 {
     use BundleAdminClassicTrait;
     use PackageVersionTrait;
+
+    public function __construct()
+    {
+        trigger_deprecation(
+            'pimcore/google-marketing-bundle',
+            '2.1',
+            'The GoogleMarketingBundle is deprecated and will be discontinued with Pimcore Studio.'
+        );
+    }
 
     public function getContainerExtension(): ExtensionInterface
     {

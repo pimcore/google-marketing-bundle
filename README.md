@@ -1,5 +1,8 @@
 # Google Marketing Bundle
 
+> [!WARNING]
+> This bundle won't be migrated to Pimcore Studio and therefore will be deprecated with 2.1.
+
 The `Marketing Settings` gives you the possibility to configure marketing-specific settings, which are:
 
 - Google Analytics
