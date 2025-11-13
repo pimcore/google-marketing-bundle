@@ -33,7 +33,7 @@ class PimcoreGoogleMarketingBundle extends AbstractPimcoreBundle implements Depe
     use BundleAdminClassicTrait;
     use PackageVersionTrait;
 
-   public function __construct()
+    public function __construct()
     {
         trigger_deprecation(
             'pimcore/google-marketing-bundle',
