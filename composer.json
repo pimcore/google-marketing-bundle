@@ -14,7 +14,7 @@
   "minimum-stability": "dev",
   "require": {
     "php": "~8.3.0 || ~8.4.0",
-    "pimcore/pimcore": "^12.0",
+    "pimcore/pimcore": "^12.3",
     "google/apiclient": "^2.12"
   },
   "require-dev": {
@@ -40,6 +40,9 @@
     ]
   },
   "extra": {
+    "branch-alias": {
+      "dev-2.x": "2.1.x-dev"
+    },
     "pimcore": {
       "bundles": [
         "Pimcore\\Bundle\\GoogleMarketingBundle\\PimcoreGoogleMarketingBundle"
