@@ -9,3 +9,7 @@ parameters:
 			message: "#^Parameter \\$settingsEvent of method Pimcore\\\\Bundle\\\\GoogleMarketingBundle\\\\EventListener\\\\IndexSettingsListener\\:\\:indexSettings\\(\\) has invalid type Pimcore\\\\Bundle\\\\AdminBundle\\\\Event\\\\IndexActionSettingsEvent\\.$#"
 			count: 1
 			path: src/EventListener/IndexSettingsListener.php
+
+		-
+			message: '#Call to method (arrayNode|children|append|integerNode|scalarNode|booleanNode|enumNode|variableNode)\(\) on an unknown class#'
+			path: src/DependencyInjection/Configuration.php
