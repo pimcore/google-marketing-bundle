@@ -11,7 +11,7 @@ The `Marketing Settings` gives you the possibility to configure marketing-specif
 
 ### Google Analytics
 
-Google Analytics code is automatically injected during the rendering of the page. See [Google Analytics](./docs/05_Analytics.md) for
+Google Analytics code is automatically injected during the rendering of the page. See [Google Analytics](./doc/05_Analytics.md) for
 details.
 
 ### Google Tag Manager
@@ -24,4 +24,4 @@ possibilities through:
 * a dedicated template for both events, which can be customized from an event listener
 
 ### Google Service Integrations
-For a more detailed description, see [Google Service Integration](./docs/10_Google_Services_Integration.md)
+For a more detailed description, see [Google Service Integration](./doc/10_Google_Services_Integration.md)
