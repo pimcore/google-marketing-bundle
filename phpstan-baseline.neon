@@ -1,6 +1,11 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Call to method scalarNode\\(\\) on an unknown class Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeBuilder\\<Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\ArrayNodeDefinition\\>\\.$#"
+			count: 1
+			path: src/DependencyInjection/Configuration.php
+
+		-
 			message: "#^Call to method addSetting\\(\\) on an unknown class Pimcore\\\\Bundle\\\\AdminBundle\\\\Event\\\\IndexActionSettingsEvent\\.$#"
 			count: 1
 			path: src/EventListener/IndexSettingsListener.php
